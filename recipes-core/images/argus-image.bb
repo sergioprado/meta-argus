@@ -4,6 +4,6 @@ IMAGE_INSTALL = "packagegroup-core-boot ${CORE_IMAGE_EXTRA_INSTALL}"
 
 LICENSE = "MIT"
 
-EXTRA_IMAGE_FEATURES:remove = "debug-tweaks"
+EXTRA_IMAGE_FEATURES:remove:argus-prod = "debug-tweaks"
 
 inherit core-image
