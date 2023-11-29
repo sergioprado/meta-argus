@@ -4,10 +4,6 @@ IMAGE_INSTALL = "packagegroup-core-boot ${CORE_IMAGE_EXTRA_INSTALL}"
 
 LICENSE = "MIT"
 
-IMAGE_FEATURES += "\
-    read-only-rootfs \
-"
-
 EXTRA_IMAGE_FEATURES:remove:argus-prod = "debug-tweaks"
 
 IMAGE_FSTYPES = "wic"
