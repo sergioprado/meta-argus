@@ -1,0 +1,40 @@
+header:
+  version: 16
+
+machine: qemuarm
+distro: argus
+
+repos:
+  poky:
+    url: "https://git.yoctoproject.org/poky"
+    branch: scarthgap
+    path: sources/poky
+    layers:
+      meta:
+  meta-openembedded:
+    url: https://git.openembedded.org/meta-openembedded
+    branch: scarthgap
+    path: sources/meta-openembedded
+    layers:
+      meta-oe:
+  meta-security:
+    url: "https://git.yoctoproject.org/meta-security"
+    branch: scarthgap
+    path: sources/meta-security
+  meta-argus:
+    url: "https://github.com/sergioprado/meta-argus.git"
+    branch: scarthgap
+    path: sources/meta-argus
+  meta-argus-bsp:
+    url: "https://github.com/sergioprado/meta-argus-bsp.git"
+    branch: scarthgap
+    path: sources/meta-argus-bsp
+
+local_conf_header:
+  base: |
+    CONF_VERSION = "2"
+    PATCHRESOLVE = "noop"
+    ARGUS_BUILD_TYPE = "argus-prod"
+
+target:
+  - argus-image
