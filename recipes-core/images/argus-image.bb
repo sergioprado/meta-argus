@@ -1,6 +1,13 @@
 SUMMARY = "Argus Operating System base image"
 
-IMAGE_INSTALL = "packagegroup-core-boot ${CORE_IMAGE_EXTRA_INSTALL}"
+IMAGE_INSTALL = "\
+    packagegroup-core-boot \
+    ${CORE_IMAGE_EXTRA_INSTALL} \
+"
+
+IMAGE_INSTALL:append:argus-dev = "\
+    cryptsetup \
+"
 
 LICENSE = "MIT"
 
